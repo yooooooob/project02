@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색박스</title>
+    <link rel="stylesheet" href="css/060.css">
+
+    <script src="lib/code.jquery.com_jquery-3.7.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.search_icon').click(function () {
+                $('.search_box').slideToggle(1000);
+            });
+
+            //2차메뉴실행
+            //아코디언 메뉴1
+            //.depth01 > a 를 클릭했을 때 실행
+            //클릭한 선택자의 뒤에 있는 .depth02가 슬라이드 토글
+
+
+            $('.depth01 > a').click(function(){
+                $(this).next().slideToggle(400);
+                $(this).toggleClass('on');
+
+            }) //내가 선택한(this) ,뒤에 형제들(next)에게 토글 액션 주기
+
+            $('.menu_open').click(function(){
+                $('nav').css({
+                    'left' : '0',
+                    'transition' : '0.7s'
+                })
+            })
+
+            $('.menu_close').click(function(){
+                $('nav').css({
+                    'left' : '-100%',
+                    'transition' : '0.7s'
+                })
+            })
+
+
+            
+
+        });//jquery end
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">Logo</a>
+            </h1>
+
+            <div class="menu_open">
+                <img src="img/메뉴아이콘/icons8-메뉴-50.png" alt="메뉴보기">
+            </div><!-- .menu_open end  -->
+
+            <nav>
+                <div class="menu_close">
+                    <p>메뉴닫기</p>
+                </div><!-- .menu_close end -->
+
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">menu1</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ul><!-- depth02 end-->
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu2</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu2-1</a></li>
+                            <li><a href="#">menu2-2</a></li>
+                            <li><a href="#">menu2-3</a></li>
+                            <li><a href="#">menu2-4</a></li>
+                        </ul><!-- depth02 end-->
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu3</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu3-1</a></li>
+                            <li><a href="#">menu3-2</a></li>
+                            <li><a href="#">menu3-3</a></li>
+                            <li><a href="#">menu3-4</a></li>
+                        </ul><!-- depth02 end-->
+                    </li><!-- depth01 end -->
+
+
+                    <li class="depth01">
+                        <a href="#">menu4</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu4-1</a></li>
+                            <li><a href="#">menu4-2</a></li>
+                            <li><a href="#">menu4-3</a></li>
+                            <li><a href="#">menu4-4</a></li>
+                        </ul><!-- depth02 end-->
+                    </li><!-- depth01 end -->
+
+                </ul><!-- .gnb end  -->
+
+            </nav>
+
+            <div class="search_icon">
+                <img src="img/검색아이콘/icons8-수색-50.png" alt="검색하기">
+            </div><!-- .search_icon end  -->
+
+            <div class="search_box">
+                <input type="text" placeholder="정보를 입력해주세요.">
+                <button>검색</button>
+            </div><!-- .search_box end -->
+
+
+        </div><!-- .inner end -->
+    </header>
+
+</body>
+
+</html>
